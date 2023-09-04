@@ -19,3 +19,6 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
+
+api:
+  key: Mi509VSdtp6o1yGDQSIeGFqrcsfCyU9Dig%2F0dIDK5IdUUoT7P7xVU48wmnUEF1LS5VQ1ueuZ2PLm6Pt%2BT8X7Bw==
