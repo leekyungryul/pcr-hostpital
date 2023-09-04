@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.pcrhospital.domain.Hospital;
 import com.example.pcrhospital.domain.HospitalRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -28,6 +28,12 @@ public class HospitalController {
         }
 
         return "index"; //templates/index.mustache
+    }
+
+    // http://localhost:8080/api/hospital?sidoNm=강원&sgguNm=강릉시
+    @GetMapping("/api/hospital")
+    public @ResponseBody List<Hospital> hospitals(String sidoNm, String sgguNm) {
+        return repository.mFindHospital(sidoNm, sgguNm);
     }
 
     @GetMapping("/api/sgguNm")
