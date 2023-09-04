@@ -31,7 +31,7 @@ public class HospDownloadBatch {
     String serviceKey;
 
     // 초 분 시 일 월 주
-    @Scheduled(cron = "0 34 * * * *")
+    @Scheduled(cron = "0 51 * * * *")
     public void startBatch() throws URISyntaxException {
         List<Hospital> hospitals = new ArrayList<>();
 
@@ -87,6 +87,9 @@ public class HospDownloadBatch {
 //                    .ykiho(e.getYkiho())
 //                    .build();
 //        }).collect(Collectors.toList());
+        //기존 데이터 삭제
+//        hospRepository.deleteAll();
+        //배치시간에 맞춰서 다운로드
         hospRepository.saveAll(hospitals);
     }
 }
